@@ -1,46 +1,33 @@
 <script setup>
-import 'primeicons/primeicons.css';
+
+defineProps({
+    essay: Object
+})
 
 </script>
 
 <template>
-    <div class="header-container">
-        <div class="portfolio">PORTFOLIO</div>
-        <div>Valentina Corbalán Labora</div>
-        <div>
-            <i class="pi pi-linkedin margin-right-4"></i>
-            <a
-                href="https://www.linkedin.com/in/valentina-corbalan-labora/"
-                target="_blank"
-            >LinkedIn</a>
-        </div>
+    <div class="article-container">
+        <h3>{{ essay.title }}</h3>
+        <ScrollPanel style="width: 100%; height: 200px">
+            {{ essay.abstract }}
+            <ScrollTop target="parent" :threshold="100" icon="pi pi-arrow-up" />
+        </ScrollPanel>
     </div>
 </template>
 
-<style scoped>
-* {
-    list-style: none;
-    text-decoration: none;
-    color: var(--primary-color);
+<style >
+.p-scrollpanel-content {
+    text-align: left;
 }
-.header-container {
-    font-family: "Fredoka", sans-serif;
-    background: url("https://media-exp1.licdn.com/dms/image/C4E16AQFCo-3KvfDOMA/profile-displaybackgroundimage-shrink_200_800/0/1644249478599?e=1651708800&v=beta&t=nW9knYV8_ROCphTo5oB6hvzIMyhHJBE6gQwd93iMaAE")
-        no-repeat center;
-    background-size: cover;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    padding: 1.1rem 1rem 1.1rem 1rem;
-    height: 200px;
+
+.p-scrolltop-sticky {
+    width: 25px !important;
+    height: 25px !important;
+    border-color: pink !important;
 }
-.header-container > div {
-    text-shadow: 1px 1px 4px var(--background-color),
-        1px 1px 3px var(--secondary-color);
-}
-.portfolio {
-    font-family: "Prompt", sans-serif;
-    font-weight: bolder;
-    font-size: 1.1rem;
+
+.p-scrolltop-icon {
+    font-size: 15px !important;
 }
 </style>

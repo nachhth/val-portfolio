@@ -1,10 +1,14 @@
 <script setup>
-// import HelloWorld from './components/HelloWorld.vue'
+// json with essays
+import essays from './data/essays.json'
+
+// Components
 import Header from './components/Header.vue'
-import Card from 'primevue/card';
+import Article from './components/Article.vue'
 
 
-const title = "Hi!"
+const { data } = essays
+
 
 
 </script>
@@ -16,7 +20,7 @@ const title = "Hi!"
       src="https://media-exp1.licdn.com/dms/image/C5603AQHpJjcfkreNvg/profile-displayphoto-shrink_200_200/0/1637426848749?e=1651708800&v=beta&t=_q9at10tHJfBOwrgPA7bmxLmNZm1zHG8SPOPAo0CgfY"
       alt="profile"
     />
-    <h1>{{ title }}</h1>
+    <h1>Hello there!</h1>
   </div>
 
   <Card>
@@ -26,8 +30,9 @@ const title = "Hi!"
     </template>
   </Card>
 
-  <!-- <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />-->
+  <div class="articles-container">
+    <Article v-for="essay in data" :essay="essay"></Article>
+  </div>
 </template>
 
 <style>
@@ -35,18 +40,20 @@ const title = "Hi!"
 @import url("https://fonts.googleapis.com/css2?family=Fredoka&display=swap");
 
 :root {
-  --background-color: whitesmoke;
-  --background-color-secondary: #2b2b2b;
-  --primary-color: #121212;
-  --secondary-color: pink;
+  --my-background-color: #121212;
+  --my-background-color-secondary: #2b2b2b;
+  --my-primary-color: whitesmoke;
+  --my-secondary-color: pink;
+  --primary-color: pink !important;
+  --focus-ring: pink !important;
 }
 
 html {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--background-color);
-  color: var(--primary-color);
+  background-color: var(--my-background-color);
+  color: var(--my-primary-color);
   font-size: 1.2rem;
 }
 
@@ -59,7 +66,12 @@ img {
   height: 120px;
   border-radius: 10px;
   /* border-radius: 50%; */
-  border: 2px solid var(--secondary-color);
+  border: 2px solid var(--my-secondary-color);
+}
+
+.p-card {
+  max-width: 75vw;
+  margin: 0 auto;
 }
 
 .p-card-content {
@@ -81,9 +93,22 @@ img {
   padding: 25px;
 }
 
+.articles-container {
+  max-width: 90vw;
+  margin: 10px auto;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
 @media (max-width: 700px) {
   .foto-title-container {
     padding-top: 0px;
+  }
+
+  .articles-container {
+    grid-template-columns: 1fr;
   }
 }
 </style>

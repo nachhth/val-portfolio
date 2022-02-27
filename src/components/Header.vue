@@ -1,5 +1,4 @@
 <script setup>
-import 'primeicons/primeicons.css';
 
 </script>
 
@@ -19,7 +18,7 @@ import 'primeicons/primeicons.css';
 * {
   list-style: none;
   text-decoration: none;
-  color: var(--primary-color);
+  color: var(--my-primary-color);
 }
 .header-container {
   font-family: "Fredoka", sans-serif;
@@ -27,6 +26,8 @@ import 'primeicons/primeicons.css';
   justify-content: space-between;
   align-items: flex-end;
   padding: 1.1rem 1rem 1.1rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .header-image {
