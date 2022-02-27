@@ -4,6 +4,7 @@ import 'primeicons/primeicons.css';
 </script>
 
 <template>
+  <div class="header-image"></div>
   <div class="header-container">
     <div class="portfolio">PORTFOLIO</div>
     <div>Valentina Corbalán Labora</div>
@@ -22,22 +23,33 @@ import 'primeicons/primeicons.css';
 }
 .header-container {
   font-family: "Fredoka", sans-serif;
-  background: url("https://media-exp1.licdn.com/dms/image/C4E16AQFCo-3KvfDOMA/profile-displaybackgroundimage-shrink_200_800/0/1644249478599?e=1651708800&v=beta&t=nW9knYV8_ROCphTo5oB6hvzIMyhHJBE6gQwd93iMaAE")
-    no-repeat center;
-  background-size: cover;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   padding: 1.1rem 1rem 1.1rem 1rem;
-  height: 200px;
 }
-.header-container > div {
-  text-shadow: 1px 1px 4px var(--background-color),
-    1px 1px 3px var(--secondary-color);
+
+.header-image {
+  height: 300px;
+  background: url("../assets/cropped-background.jpg");
+  background-size: cover;
 }
 .portfolio {
   font-family: "Prompt", sans-serif;
   font-weight: bolder;
   font-size: 1.1rem;
+}
+
+@media (max-width: 700px) {
+  .header-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header-container > div {
+    padding: 10px;
+  }
 }
 </style>

@@ -35,9 +35,9 @@ const title = "Hi!"
 @import url("https://fonts.googleapis.com/css2?family=Fredoka&display=swap");
 
 :root {
-  --background-color: #121212;
+  --background-color: whitesmoke;
   --background-color-secondary: #2b2b2b;
-  --primary-color: whitesmoke;
+  --primary-color: #121212;
   --secondary-color: pink;
 }
 
@@ -79,5 +79,11 @@ img {
   max-width: 550px;
   margin: 0 auto;
   padding: 25px;
+}
+
+@media (max-width: 700px) {
+  .foto-title-container {
+    padding-top: 0px;
+  }
 }
 </style>
