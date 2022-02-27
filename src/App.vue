@@ -23,12 +23,10 @@ const { data } = essays
     <h1>Hello there!</h1>
   </div>
 
-  <Card>
-    <template #content>
-      Literature and writing have been a passion for so long sometimes I think I might have been born with a book in my hand. This passion is what brought me to study my BA in Language and Literature at University of A Coruña, where I am currently working on my Master’s degree.
-      I’m a highly detailed-oriented person and I enjoy working on projects that involve creative writing and critical thinking.
-    </template>
-  </Card>
+  <p class="about-me">
+    Literature and writing have been a passion for so long sometimes I think I might have been born with a book in my hand. This passion is what brought me to study my BA in Language and Literature at University of A Coruña, where I am currently working on my Master’s degree.
+    I’m a highly detailed-oriented person and I enjoy working on projects that involve creative writing and critical thinking.
+  </p>
 
   <div class="articles-container">
     <Article v-for="essay in data" :essay="essay"></Article>
@@ -40,9 +38,9 @@ const { data } = essays
 @import url("https://fonts.googleapis.com/css2?family=Fredoka&display=swap");
 
 :root {
-  --my-background-color: #121212;
+  --my-background-color: whitesmoke;
   --my-background-color-secondary: #2b2b2b;
-  --my-primary-color: whitesmoke;
+  --my-primary-color: #121212c;
   --my-secondary-color: pink;
   --primary-color: pink !important;
   --focus-ring: pink !important;
@@ -69,12 +67,7 @@ img {
   border: 2px solid var(--my-secondary-color);
 }
 
-.p-card {
-  max-width: 75vw;
-  margin: 0 auto;
-}
-
-.p-card-content {
+.about-me {
   margin: 0 auto;
   max-width: 75vw;
   font-family: "Fredoka", sans-serif;
@@ -100,6 +93,10 @@ img {
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
+}
+
+h3 {
+  margin-top: 0;
 }
 
 @media (max-width: 700px) {

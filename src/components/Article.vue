@@ -7,13 +7,15 @@ defineProps({
 </script>
 
 <template>
-    <div class="article-container">
-        <h3>{{ essay.title }}</h3>
-        <ScrollPanel style="width: 100%; height: 200px">
-            {{ essay.abstract }}
-            <ScrollTop target="parent" :threshold="100" icon="pi pi-arrow-up" />
-        </ScrollPanel>
-    </div>
+    <Card class="article-container">
+        <template #content>
+            <h3>{{ essay.title }}</h3>
+            <ScrollPanel style="width: 100%; height: 200px">
+                {{ essay.abstract }}
+                <ScrollTop target="parent" :threshold="100" icon="pi pi-arrow-up" />
+            </ScrollPanel>
+        </template>
+    </Card>
 </template>
 
 <style >
