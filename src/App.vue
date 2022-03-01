@@ -9,6 +9,7 @@ import Article from './components/Article.vue'
 
 const { data } = essays
 
+// TODO set vue-router
 
 
 </script>
