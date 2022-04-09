@@ -11,7 +11,9 @@ defineProps({
         <template #content>
             <h3>{{ essay.title }}</h3>
             <ScrollPanel style="width: 100%; height: 200px">
+                <div class="text-xs">
                 {{ essay.abstract }}
+                </div>
                 <ScrollTop target="parent" :threshold="100" icon="pi pi-arrow-up" />
             </ScrollPanel>
         </template>
@@ -26,7 +28,6 @@ defineProps({
 .p-scrolltop-sticky {
     width: 25px !important;
     height: 25px !important;
-    border-color: pink !important;
 }
 
 .p-scrolltop-icon {
